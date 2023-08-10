@@ -1,0 +1,124 @@
+{
+  "info": {
+    "name": "api",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "origin",
+      "value": "http://localhost:8080",
+      "type": "string"
+    }
+  ],
+  "item": [
+    {
+      "name": "BooksService",
+      "item": [
+        {
+          "name": "createBook",
+          "request": {
+            "description": "Add a book to the database",
+            "url": {
+              "raw": "{{origin}}/books/create-book",
+              "host": [
+                "{{origin}}"
+              ],
+              "path": [
+                "books",
+                "create-book"
+              ],
+              "query": []
+            },
+            "header": [],
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"title\": \"example\",\n  \"author\": \"example\",\n  \"finish\": true,\n  \"createdAt\": \"1994-11-05T13:15:30Z\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "name": "Successful createBook",
+              "code": 200,
+              "originalRequest": {
+                "description": "Add a book to the database",
+                "url": {
+                  "raw": "{{origin}}/books/create-book",
+                  "host": [
+                    "{{origin}}"
+                  ],
+                  "path": [
+                    "books",
+                    "create-book"
+                  ],
+                  "query": []
+                },
+                "header": [],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"title\": \"example\",\n  \"author\": \"example\",\n  \"finish\": true,\n  \"createdAt\": \"1994-11-05T13:15:30Z\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "body": "{\n  \"id\": \"example\",\n  \"title\": \"example\",\n  \"author\": \"example\",\n  \"finish\": true,\n  \"createdAt\": \"1994-11-05T13:15:30Z\"\n}",
+              "_postman_previewlanguage": "json"
+            }
+          ]
+        },
+        {
+          "name": "getBook",
+          "request": {
+            "description": "Retrieve a book from the database based on the ID",
+            "url": {
+              "raw": "{{origin}}/books/:id",
+              "host": [
+                "{{origin}}"
+              ],
+              "path": [
+                "books",
+                ":id"
+              ],
+              "query": []
+            },
+            "header": [],
+            "method": "GET"
+          },
+          "response": [
+            {
+              "name": "Successful getBook",
+              "code": 200,
+              "originalRequest": {
+                "description": "Retrieve a book from the database based on the ID",
+                "url": {
+                  "raw": "{{origin}}/books/:id",
+                  "host": [
+                    "{{origin}}"
+                  ],
+                  "path": [
+                    "books",
+                    ":id"
+                  ],
+                  "query": []
+                },
+                "header": [],
+                "method": "GET"
+              },
+              "body": "{\n  \"id\": \"example\",\n  \"title\": \"example\",\n  \"author\": \"example\",\n  \"finish\": true,\n  \"createdAt\": \"1994-11-05T13:15:30Z\"\n}",
+              "_postman_previewlanguage": "json"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
